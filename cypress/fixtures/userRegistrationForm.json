@@ -1,0 +1,13 @@
+{
+  "nameInvalid": "q",
+  "nameValid": "Liuda",
+
+  "surnameInvalid": "S",
+  "surnameValid": "Sever",
+
+  "phoneNumberInvalid": 123,
+  "phoneNumberValid": 606222333,
+
+  "emailInvalid": "examplemeta.ua",
+  "emailValid": "example@meta.ua"
+}
