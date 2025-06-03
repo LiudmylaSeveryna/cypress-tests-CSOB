@@ -27,7 +27,7 @@ beforeEach(() => {
 
   it('Validate tile1, can should all attributes', () => {
     cy.url().should('include', '/lide/ucty');
-    cy.intercept('GET', '**/widget/**/state*', { statusCode: 200, body: {} }).as('mluvii');
+    //cy.intercept('GET', '**/widget/**/state*', { statusCode: 200, body: {} }).as('mluvii');
     productTiles.tileLink(1).should('have.attr', 'href').and('include', 'pro-deti');
     productTiles.tileImage(1).should('be.visible');
     productTiles.tileTitle(1).should('contain.text', 'Účet pro děti');
@@ -36,7 +36,7 @@ beforeEach(() => {
 
   it('Validate tile2, can should all attributes', () => {
     cy.url().should('include', '/lide/ucty');
-    cy.intercept('GET', '**mluvii.csob.cz**', { statusCode: 200, body: {} });
+    //cy.intercept('GET', '**mluvii.csob.cz**', { statusCode: 200, body: {} });
     productTiles.tileLink(2).should('have.attr', 'href').and('include', 'studentsky');
     productTiles.tileImage(2).should('be.visible');
     productTiles.tileTitle(2).should('contain.text', 'Účet pro mladé 18');
