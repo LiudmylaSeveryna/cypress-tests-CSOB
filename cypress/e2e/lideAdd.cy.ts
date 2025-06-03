@@ -16,8 +16,7 @@ it('Validate additional links block count and first link', () => {
 
   // Перевірка першого посилання
   lideAdditionalLinks.linkByIndex(1)
-    .should('have.attr', 'href')
-    //.and('include', 'prevedte-si-ucet-k-nam');
+    .should('have.attr', 'href').and('include', 'prevedte-si-ucet-k-nam');
 
   lideAdditionalLinks.linkTextByIndex(25).should('contain.text', 'Změna banky');
 });
