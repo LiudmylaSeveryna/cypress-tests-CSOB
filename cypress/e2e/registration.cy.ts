@@ -35,7 +35,7 @@ import lidePage from "..//pages/lide/lidePage"
 
     it('registation on form - invalid email', () => {
         cy.fixture('userRegistrationForm.json').then((userName) => {
-        executRegistation.register(userName.nameValid, userName.surnameValid, userName.phoneNumberValid, userName.emailValid)  
+        executRegistation.register(userName.nameValid, userName.surnameValid, userName.phoneNumberValid, userName.emailInvalid)  
         cy.get('body').click();
         executRegistation.emailError().should('be.visible').and('contain.text', 'Zadejte platný e-mail');
         })
@@ -43,10 +43,7 @@ import lidePage from "..//pages/lide/lidePage"
 
     it('registation on form - valid all fields', () => {
         cy.fixture('userRegistrationForm.json').then((userName) => {
-        executRegistation.nameInput().type(userName.nameValid)
-        executRegistation.surnameInput().type(userName.surnameValid)
-        executRegistation.phoneInput().type(userName.phoneNumberValid)
-        executRegistation.emailInput().clear().type(userName.emailValid)
+        executRegistation.register(userName.nameValid, userName.surnameValid, userName.phoneNumberValid, userName.emailValid)  
         executRegistation.buttonPokracovat().click()
         executRegistation.bannerSuccess().should('be.visible').and('contain.text', 'Sjednání Plus Konta');
         })
