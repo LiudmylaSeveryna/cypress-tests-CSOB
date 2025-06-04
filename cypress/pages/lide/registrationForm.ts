@@ -14,6 +14,12 @@ export default new class RegistrFormPage{
     buttonPokracovat = () => cy.get('button[class="crct-frm1006-button"]')
     bannerSuccess = () => cy.get('div[class="rct-b-banner-content pui-picturefill-background pui-js-picturefill-background-init-rct"]')
 
-    
+    register(name: string, surname: string, phone: string, email: string) { 
+        this.nameInput().type(name)
+        this.surnameInput().type(surname)
+        this.phoneInput().type(phone)
+        this.emailInput().type(email)
+
+    }
     
 }

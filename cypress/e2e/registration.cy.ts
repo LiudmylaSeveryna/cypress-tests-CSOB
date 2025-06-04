@@ -14,40 +14,28 @@ import lidePage from "..//pages/lide/lidePage"
    
     it('registation on form - invalid name', () => {
         cy.fixture('userRegistrationForm.json').then((userName) => {
-        executRegistation.nameInput().type(userName.nameInvalid)
-        executRegistation.surnameInput().type(userName.surnameValid)
-        executRegistation.phoneInput().type(userName.phoneNumberValid)
-        executRegistation.emailInput().clear().type(userName.emailValid)
+        executRegistation.register(userName.nameInvalid, userName.surnameValid, userName.phoneNumberValid, userName.emailValid)
         executRegistation.nameError().should('be.visible').and('contain.text', 'Zadejte minimálně 2 znaky');
         })
     })
 
     it('registation on form - invalid surname', () => {
         cy.fixture('userRegistrationForm.json').then((userName) => {
-        executRegistation.nameInput().type(userName.nameValid)
-        executRegistation.surnameInput().type(userName.surnameInvalid)
-        executRegistation.phoneInput().type(userName.phoneNumberValid)
-        executRegistation.emailInput().clear().type(userName.emailValid)
+        executRegistation.register(userName.nameValid, userName.surnameInvalid, userName.phoneNumberValid, userName.emailValid)  
         executRegistation.surnameError().should('be.visible').and('contain.text', 'Zadejte minimálně 2 znaky');
         })
     })
         
     it('registation on form - invalid phone', () => {
         cy.fixture('userRegistrationForm.json').then((userName) => {
-        executRegistation.nameInput().type(userName.nameValid)
-        executRegistation.surnameInput().type(userName.surnameValid)
-        executRegistation.phoneInput().type(userName.phoneNumberInvalid)
-        executRegistation.emailInput().clear().type(userName.emailValid)
+        executRegistation.register(userName.nameValid, userName.surnameValid, userName.phoneNumberInvalid, userName.emailValid)  
         executRegistation.phoneError().should('be.visible').and('contain.text', 'Zadejte platné telefonní číslo');
         })
     })
 
     it('registation on form - invalid email', () => {
         cy.fixture('userRegistrationForm.json').then((userName) => {
-        executRegistation.nameInput().type(userName.nameValid)
-        executRegistation.surnameInput().type(userName.surnameValid)
-        executRegistation.phoneInput().type(userName.phoneNumberValid)
-        executRegistation.emailInput().clear().type(userName.emailInvalid)
+        executRegistation.register(userName.nameValid, userName.surnameValid, userName.phoneNumberValid, userName.emailValid)  
         cy.get('body').click();
         executRegistation.emailError().should('be.visible').and('contain.text', 'Zadejte platný e-mail');
         })
