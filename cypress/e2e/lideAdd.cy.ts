@@ -6,7 +6,7 @@ import navigLideComponent, { NavigLideLinks } from '../pages/components/navig.li
 
 beforeEach(() => {
   cy.visit('/lide');
-  lidePage.cookieConsent();
+  cy.cookieConsent();
   navigLideComponent.navigateToPage(NavigLideLinks.Ucty);
 });
 

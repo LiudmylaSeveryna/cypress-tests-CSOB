@@ -11,7 +11,7 @@ describe('CSOB Lide/Ucty page', () => {
   beforeEach(() => {
   cy.visit('/') 
     //cy.get('header').should('exist')
-    lidePage.cookieConsent() // if we have msg with cookies
+    cy.cookieConsent(); // custom. command, if we have msg with cookies
     navigComponent.navigateToPage(NavigationLinks.Lide)
     navigLideComponent.navigateToPage(NavigLideLinks.Ucty)  
   })

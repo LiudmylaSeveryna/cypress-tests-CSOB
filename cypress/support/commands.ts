@@ -35,4 +35,16 @@
 //     }
 //   }
 // }
+Cypress.Commands.add('cookieConsent', () =>{
+    cy.get('body').then($body => {
+        if ($body.find('button#onetrust-reject-all-handler').length > 0) {
+            cy.log('Cookie reject button exists, clicking');
+            cy.get('button#onetrust-reject-all-handler', { timeout: 10000 }).should('be.visible').click({ force: true });
+        } else {
+            cy.log('Cookie reject button not present, skipping');
+            cy.get('.onetrust-pc-dark-filter', { timeout: 15000 }).should('not.exist');
+        }
+    });
+})
+
 

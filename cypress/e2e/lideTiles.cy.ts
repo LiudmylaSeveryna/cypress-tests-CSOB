@@ -5,7 +5,7 @@ import navigLideComponent, { NavigLideLinks } from "..//pages/components/navig.l
 beforeEach(() => {
   //cy.intercept('GET', '**mluvii.csob.cz**', { statusCode: 200, body: {} });
   cy.visit('/lide');
-  lidePage.cookieConsent();
+  cy.cookieConsent();
   //navigComponent.navigateToPage(NavigationLinks.Lide)
   navigLideComponent.navigateToPage(NavigLideLinks.Ucty)  
   });  

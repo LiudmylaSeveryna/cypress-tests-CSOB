@@ -18,7 +18,7 @@ export default new class RegistrFormPage{
         this.nameInput().type(name)
         this.surnameInput().type(surname)
         this.phoneInput().type(phone)
-        this.emailInput().type(email)
+        this.emailInput().clear().type(email)
 
     }
     

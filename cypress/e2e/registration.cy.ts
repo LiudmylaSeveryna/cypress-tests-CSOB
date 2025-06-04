@@ -8,7 +8,7 @@ import lidePage from "..//pages/lide/lidePage"
         }); 
         cy.visit('/konto-hned');
         cy.wait(3000); 
-        lidePage.cookieConsent();
+        cy.cookieConsent();
         //executRegistation.confirmSubmission().click()
         })
    

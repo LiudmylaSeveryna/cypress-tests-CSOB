@@ -11,7 +11,7 @@ describe('template spec', () => {
 });
   it('validate details on pge Plus Konto', () => {
     cy.visit('/lide');
-    lidePage.cookieConsent();
+    cy.cookieConsent();
     navigLideComponent.navigateToPage(NavigLideLinks.Ucty);
 
     authorizEnterPage.signInClient()

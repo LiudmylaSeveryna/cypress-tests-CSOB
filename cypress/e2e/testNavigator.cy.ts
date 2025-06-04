@@ -6,7 +6,7 @@ describe('CSOB home page', () => {
   it('loads and shows expected element', () => {
   cy.visit('/') 
     cy.get('header').should('exist')
-    lidePage.cookieConsent() // if we have msg with cookies
+    cy.cookieConsent();// if we have msg with cookies
     navigComponent.navigateToPage(NavigationLinks.FirmyPodnikatele)
     navigComponent.navigateToPage(NavigationLinks.VelkeFirmy)
     navigComponent.navigateToPage(NavigationLinks.Premium)
