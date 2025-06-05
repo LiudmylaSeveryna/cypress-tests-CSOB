@@ -4,13 +4,10 @@ import navigComponent, { NavigationLinks } from "..//pages/components/navig.head
 import navigLideComponent, { NavigLideLinks } from "..//pages/components/navig.lide.component"
 import breadcrumbsExisting, {} from "..//pages/lide/lidePage"
 import headerContentExist, {} from "..//pages/lide/lidePage"
-//import productTilesLideComponent, {} from "..//pages/components/products.tiles.component"
-
 
 describe('CSOB Lide/Ucty page', () => {
   beforeEach(() => {
   cy.visit('/') 
-    //cy.get('header').should('exist')
     cy.cookieConsent(); // custom. command, if we have msg with cookies
     navigComponent.navigateToPage(NavigationLinks.Lide)
     navigLideComponent.navigateToPage(NavigLideLinks.Ucty)  

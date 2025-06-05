@@ -11,10 +11,5 @@ export default new class productTilesLideComponent {
   tileTitle = (n: number) => cy.get('.html-c-product-tile').eq(n - 1).find('div.html-introductory');
   tileDescription = (n: number) => cy.get('.html-c-product-tile').eq(n - 1).find('div.html-caption').find('h3');
 
-  // tileLink1 = () => cy.get('.html-c-product-tile').eq(0).find('a');
-  // tileImage1 = () => cy.get('.html-c-product-tile').eq(0).find('img');
-  // tileTitle1 = () => cy.get('.html-c-product-tile').eq(0).find('div.html-introductory');
-  // tileDescription1 = () => cy.get('.html-c-product-tile').eq(0).find('div.html-caption').find('h3');
-
 }
 

@@ -12,9 +12,8 @@ beforeEach(() => {
 
 it('Validate additional links block count and first link', () => {
   lideAdditionalLinks.container().should('exist');
-  //lideAdditionalLinks.linkBlocks().should('have.length', 9);
 
-  // Перевірка першого посилання
+  // validate first additional signpost 
   lideAdditionalLinks.linkByIndex(1)
     .should('have.attr', 'href').and('include', 'prevedte-si-ucet-k-nam');
 

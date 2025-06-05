@@ -9,7 +9,6 @@ import lidePage from "..//pages/lide/lidePage"
         cy.visit('/konto-hned');
         cy.wait(3000); 
         cy.cookieConsent();
-        //executRegistation.confirmSubmission().click()
         })
    
     it('registation on form - invalid name', () => {
