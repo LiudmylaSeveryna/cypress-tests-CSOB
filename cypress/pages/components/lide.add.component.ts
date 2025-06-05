@@ -1,10 +1,8 @@
-// needed to correct
-export default new class LideAdditionalLinks {
-  container = () => cy.get('div[class="wcm-c-grid"]');
-  linkBlocks = () => this.container().children('div[class="wcm-b-grid-4"]');
-  
-  linkByIndex = (n: number) => cy.get('[class="html-c-additional-signpost html-has-no-icon"]').find('a');
-  linkTextByIndex = (n: number) => this.linkByIndex(n - 1).find('span.html-signpost-label');
-  linkHrefByIndex = (n: number) => this.linkByIndex(n - 1).invoke('attr', 'href');
-  
+export default new class LideAdditionalLinks { 
+  allAdds = () => cy.get('.html-c-additional-signpost');
+  allAddsLink = ($add: JQuery<HTMLElement>) => cy.wrap($add).find('a');
+  allAddsDescription = ($add: JQuery<HTMLElement>) => cy.wrap($add).find('.html-signpost-label');
+
+  AddsLink = (n: number) => cy.get('.html-c-additional-signpost').eq(n - 1).find('a');
+  AddsDescription = (n: number) => cy.get('.html-c-additional-signpost').eq(n - 1).find('.html-signpost-label');
 }

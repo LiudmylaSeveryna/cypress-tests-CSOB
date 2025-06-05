@@ -9,20 +9,19 @@ beforeEach(() => { // ignores error "uncaught:exception"
   navigLideComponent.navigateToPage(NavigLideLinks.Ucty)  
   });  
 
-  // it('Validate all tiles, can should all attributes', () => {
-    
-  //   cy.url().should('include', '/lide/ucty');
-   
-  //   productTiles.allTiles().should('exist').and('have.length.at.least', 1);
-  //   productTiles.allTiles().each(($tile) => {
-  //     // Validate href
-  //     productTiles.allTileLink($tile).should('have.attr', 'href')
-  //     productTiles.allTileImage($tile).should('be.visible').and(($img) => {
-  //         expect($img.attr('srcset')).to.exist;
-  //       });
-  //     productTiles.allTileTitle($tile).invoke('text').should('not.be.empty');
-  //     productTiles.allTileDescription($tile).invoke('text').should('not.be.empty');
-  //   });
+  it('Validate all tiles, can should all attributes', () => { 
+    cy.url().should('include', '/lide/ucty'); 
+    productTiles.allTiles().should('exist').and('have.length', 18);
+    productTiles.allTiles().each(($tile) => {
+      // Validate href
+      productTiles.allTileLink($tile).should('have.attr', 'href')
+      productTiles.allTileImage($tile).should('be.visible').and(($img) => {
+          expect($img.attr('srcset')).to.exist;
+        });
+      productTiles.allTileTitle($tile).invoke('text').should('not.be.empty');
+      productTiles.allTileDescription($tile).invoke('text').should('not.be.empty');
+    });
+  });
 
   it('Validate tile1, can should all attributes', () => {
     cy.url().should('include', '/lide/ucty');
@@ -40,4 +39,3 @@ beforeEach(() => { // ignores error "uncaught:exception"
     productTiles.tileDescription(2).should('contain.text', 'Běžný účet bez poplatků pro mladé');
   });
   
-//})
